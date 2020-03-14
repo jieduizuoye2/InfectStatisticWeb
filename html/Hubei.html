@@ -160,7 +160,31 @@
                     polyline += " ";
                 }
             }
-            poly.setAttribute("points",polyline);     
+            poly.setAttribute("points",polyline);    
+          
+            //隐藏原有X轴坐标
+            var oldText =document.getElementsByTagName("text");
+            for( j =0 ; j < oldText.length ; j ++){
+                if(oldText[j].getAttribute("y") == 400){
+                    oldText[j].setAttribute("fill","white");
+                }
+            }
+
+            //建立新X轴坐标
+            i = ( ( nDate >= date.length ) ? ( nDate - point ) : 0 );
+            for( j = 0 ; i <= nDate ; j ++ , i ++ ){
+                var svg =document.getElementById('mysvg');
+                var sdate ="";
+                var x = "" ;
+                x = 10 + j * 70 ;
+                sdate += howManyDate [i];
+                var newText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                newText.setAttribute("x", x);
+                newText.setAttribute("y", "400");
+                newText.setAttribute("fill", "#333");
+                newText.appendChild(document.createTextNode(sdate));
+                svg.appendChild(newText);
+            }
         }
 
     </script>
