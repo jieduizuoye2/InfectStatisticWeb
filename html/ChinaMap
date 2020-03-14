@@ -1221,8 +1221,57 @@
         <rect x="100" y="1050" width="20" height="20" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)"></rect>
         <text x="130" y="1070" font-size="22" style="fill:rgb(0,0,0);">0</text>;
     </g>
-
-    </svg>
     
+    <!--设单击该矩形时修改日期，测试DateChange()函数-->
+    <g>
+        <rect id="text" x="0" y="0" width="50" height="50" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)"></rect>
+    </g>
+    
+    </svg>
+        
+    <!--互动事件-->
+    <script type="text/javascript">
+
+    var dateChange = document.getElementById('text');
+
+    dateChange.addEventListener('click', function(e) {
+        console.log('text clicked - enlarging');
+        dateChange.setAttribute("fill","black");
+        DateChange();
+    }, false);
+
+    //当日期发生改变，根据各省份当前确诊人数调整地图颜色
+    function DateChange(){
+
+        var date = [];//存放对应省份当前确诊人数数据
+
+        var city = ["Anhui","Beijing","Chongqing","Fujian","Gansu","Guangdong",
+		 "Guangxi","Guizhou","Hainan","Hebei","Heilongjiang","Henan","Hong Kong",
+		"Hubei","Hunan","Jiangsu","Jiangxi","Jilin","Liaoning","Macau",
+		 "Nei Mongol","Ningxia","Qinghai","Shaanxi","Shanghai","Shandong","Shanxi",
+        "Sichuan","Taiwan","Tianjin","Xinjiang","Xizang","Yunnan","Zhejiang"]
+
+        for(var j=0;j<city.length;j++){//测试
+            date.push(500);
+        }
+
+        for(var i=0;i<city.length;i++){//根据当前确诊人数调整地图颜色
+            var nowchange = document.getElementById(city[i]);
+            if( date[i] >= 10000 ){
+                nowchange.setAttribute("fill","black");
+            }
+            else if( date[i] >= 1000 ){
+                nowchange.setAttribute("fill","red");
+            }
+            else if( date[i] >= 1 ){
+                nowchange.setAttribute("fill","pink");
+            }
+            else{
+                nowchange.setAttribute("fill","white");
+            }
+        }
+    }
+
+    </script>
     </body>
 </html>
