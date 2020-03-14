@@ -78,3 +78,90 @@
 
         </svg>
     </div>
+  
+    <!--互动事件-->
+    <script type="text/javascript">
+        var howManyDate= [];//存放日期
+        var date = [] ;//二维数组，存放对应新增确诊、累计确诊、治愈、死亡人数
+        var pNumber = 14 ; //折线图中有十四个点
+        var polyline = "" ;
+        var nDate = 14; //默认日期在date中所处位置
+
+        //模拟日期修改，测试函数CreatPolyLine
+        var dateChange = document.getElementById('text');
+        for(var k =0;k<15;k++){ //初始化date、howManyDate
+            var l;
+            date[k]= [] ;
+            for(l=0;l<4;l++){
+                date[k].push(1000+1000*l);
+            }
+            var s;
+            s="2."+k;
+            howManyDate.push(s);
+        }
+        dateChange.addEventListener('click', function(e) {//单击调整日期时触发事件
+            console.log('text clicked - enlarging');
+            dateChange.setAttribute("width","100");
+            nDate=9;//判断所选日期在date中位置
+            CreatPolyLine(nDate,0);
+        }, false);
+        //测试结束
+
+        //切换到新增确诊趋势/累计确诊趋势/累计治愈趋势/累计死亡趋势
+        var rect0 = document.getElementById('rect0');
+        var rect1 = document.getElementById('rect1');
+        var rect2 = document.getElementById('rect2');
+        var rect3 = document.getElementById('rect3');
+        rect0.addEventListener('click', function(e) {
+            console.log('rect0 clicked - enlarging');
+            rect0.setAttribute("fill","rgb(30, 170, 212)");
+            rect1.setAttribute("fill","rgb(196, 191, 191)");
+            rect2.setAttribute("fill","rgb(196, 191, 191)");
+            rect3.setAttribute("fill","rgb(196, 191, 191)");
+            CreatPolyLine(nDate,0);
+        }, false);
+        rect1.addEventListener('click', function(e) {
+            console.log('rect1 clicked - enlarging');
+            rect1.setAttribute("fill","rgb(30, 170, 212)");
+            rect0.setAttribute("fill","rgb(196, 191, 191)");
+            rect2.setAttribute("fill","rgb(196, 191, 191)");
+            rect3.setAttribute("fill","rgb(196, 191, 191)");
+            CreatPolyLine(nDate,1);
+        }, false);
+        rect2.addEventListener('click', function(e) {
+            console.log('rect2 clicked - enlarging');
+            rect2.setAttribute("fill","rgb(30, 170, 212)");
+            rect1.setAttribute("fill","rgb(196, 191, 191)");
+            rect0.setAttribute("fill","rgb(196, 191, 191)");
+            rect3.setAttribute("fill","rgb(196, 191, 191)");
+            CreatPolyLine(nDate,2);
+        }, false);
+        rect3.addEventListener('click', function(e) {
+            console.log('rect3 clicked - enlarging');
+            rect3.setAttribute("fill","rgb(30, 170, 212)");
+            rect1.setAttribute("fill","rgb(196, 191, 191)");
+            rect2.setAttribute("fill","rgb(196, 191, 191)");
+            rect0.setAttribute("fill","rgb(196, 191, 191)");
+            CreatPolyLine(nDate,3);
+        }, false);
+ 
+        //生成趋势折线图,参数nDate为当前所选日期在date数组中所在位置
+        //style：0-新增确诊趋势，1-累计确诊趋势，2-治愈趋势，3-死亡趋势
+        function CreatPolyLine(nDate,style){
+            polyline="";
+            var i = ( ( nDate >= date.length ) ? ( nDate - point ) : 0 );
+            var poly = document.getElementById('poly');
+            var j;
+            for( j = 0 ; i <= nDate ; i ++ ,j ++ ){
+                var x = 30 + 70 * j ;
+                var y = 380 - ( date[nDate][style] * ( 70 / 3000 ) );
+                polyline += x + "," + y ;
+                if ( ( i + 1 ) <= nDate ){
+                    polyline += " ";
+                }
+            }
+            poly.setAttribute("points",polyline);     
+        }
+
+    </script>
+</body>
