@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>湖北省</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div>
+        <svg id="mysvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1369 1141" 
+        preserveAspectRatio="xMidYMid meet"
+        width="15.2111in" 
+        height="12.6778in">
+            <!--建立坐标-->
+            <g>
+                <line x1="30" y1="30" x2="1010" y2="30"
+                style="stroke:rgb(143,143,143); stroke-width:1"></line>
+                <line x1="30" y1="100" x2="1010" y2="100"
+                style="stroke:rgb(143,143,143); stroke-width:1"></line>
+                <line x1="30" y1="170" x2="1010" y2="170"
+                style="stroke:rgb(143,143,143); stroke-width:1"></line>
+                <line x1="30" y1="240" x2="1010" y2="240"
+                style="stroke:rgb(143,143,143); stroke-width:2"></line>
+                <line x1="30" y1="310" x2="1010" y2="310"
+                style="stroke:rgb(143,143,143); stroke-width:2"></line>
+                <line x1="30" y1="380" x2="1010" y2="380"
+                style="stroke:rgb(143,143,143); stroke-width:2"></line>
+        
+                
+                <line x1="30" y1="0" x2="30" y2="380"
+                style="stroke:rgb(143,143,143); stroke-width:1"></line>
+            <!--在坐标图上添加刻度说明-->>
+                <text x="10" y="380" fill="#333">0</text>
+                <text x="0" y="310" fill="#333">3000</text>
+                <text x="0" y="240" fill="#333">6000</text>
+                <text x="0" y="170" fill="#333">9000</text>
+                <text x="0" y="100" fill="#333">12000</text>
+                <text x="0" y="30" fill="#333">15000</text>
+            
+                <text x="10" y="400" fill="#333">01.27</text>
+                <text x="80" y="400" fill="#333">01.29</text>
+                <text x="150" y="400" fill="#333">01.31</text>
+                <text x="220" y="400" fill="#333">02.02</text>
+                <text x="290" y="400" fill="#333">02.04</text>
+                <text x="360" y="400" fill="#333">02.06</text>
+                <text x="430" y="400" fill="#333">02.08</text>
+                <text x="500" y="400" fill="#333">02.10</text>
+                <text x="570" y="400" fill="#333">02.12</text>
+                <text x="640" y="400" fill="#333">02.14</text>
+                <text x="710" y="400" fill="#333">02.16</text>
+                <text x="780" y="400" fill="#333">02.18</text>
+                <text x="850" y="400" fill="#333">02.20</text>
+            <!--绘制折线-->
+                <polyline id="poly" points="30,350 100,356 170,349 240,331 310,306 380,323 450,330 520,331 
+                    590,38 660,324 730,335 800,341 870,365" style="fill:none;stroke:#3fc371;stroke-width:2"/>
+            </g>
+            <!--设单击该矩形时修改日期，测试DateChange()函数-->
+            <g>
+                <rect id="text" x="0" y="0" width="50" height="50" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)"></rect>
+            </g>
+            <!--测试结束-->
+
+            <g>
+                <!--<rect id="rect0" x="10" y="420" width="150" height="50" style="fill:rgb(30, 170, 212);stroke-width:1;stroke:rgb(0,0,0)"/>
+                -->
+                <rect id="rect0" x="10" y="420" width="150" height="50" fill="rgb(30, 170, 212)" style="stroke-width:1;stroke:rgb(0,0,0)"/>
+                <text x="30" y="450" font-size="18" style="fill:rgb(255, 255, 255);">新增确诊趋势</text>
+                <rect id="rect1" x="170" y="420" width="150" height="50" fill="rgb(196, 191, 191)" style="stroke-width:1;stroke:rgb(0,0,0)"/>
+                <text x="190" y="450" font-size="18" style="fill:rgb(255, 255, 255);">累计确诊趋势</text>
+                <rect id="rect2" x="330" y="420" width="150" height="50" fill="rgb(196, 191, 191)" style="stroke-width:1;stroke:rgb(0,0,0)"/>
+                <text x="350" y="450" font-size="18" style="fill:rgb(255, 255, 255);">累计治愈趋势</text>
+                <rect id="rect3" x="490" y="420" width="150" height="50" fill="rgb(196, 191, 191)" style="stroke-width:1;stroke:rgb(0,0,0)"/>
+                <text x="510" y="450" font-size="18" style="fill:rgb(255, 255, 255);">累计死亡趋势</text>
+            </g>
+
+        </svg>
+    </div>
