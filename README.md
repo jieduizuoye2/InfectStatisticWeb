@@ -1,2 +1,7 @@
-# InfectStatisticWeb
-结对第二次作业
+作业链接：https:////www.cnblogs.com/cccccm/p/12384341.html
+
+结对学号：221701308陈凯琳、221600313黄子峻
+
+项目介绍：这个项目是疫情统计可视化的实现，运行需要下载到电脑后，双击ChinaMap.html进入主页
+
+项目构建和运行：请看博客。
