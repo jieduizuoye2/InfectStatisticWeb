@@ -1,0 +1,179 @@
+var myDate = new Date();
+
+          var china_chart = echarts.init(document.getElementById('u2_div'));
+          china_chart.on('click', function(params) {//点击事件
+            // console.log(params)
+            if(params.componentType=="series"){
+              window.open('省份详情.html');//页面跳转
+            }
+          })
+
+
+          //数据纯属虚构
+          var data = [
+            {
+              name: '江苏',
+              value: 135
+            },
+            {
+              name: '北京',
+              value: 157
+            },
+            {
+              name: '上海',
+              value: 58
+            },
+            {
+              name: '重庆',
+              value: 186
+            },
+            {
+              name: '河北',
+              value: 37
+            },
+            {
+              name: '河南',
+              value: 187
+            },
+            {
+              name: '云南',
+              value: 22
+            },
+            {
+              name: '辽宁',
+              value: 24
+            },
+            {
+              name: '黑龙江',
+              value: 198
+            },
+            {
+              name: '湖南',
+              value: 209
+            },
+            {
+              name: '安徽',
+              value: 197
+            },
+            {
+              name: '山东',
+              value: 365
+            },
+            {
+              name: '新疆',
+              value: 31
+            },
+            {
+              name: '江苏',
+              value: 135
+            },
+            {
+              name: '浙江',
+              value: 277
+            },
+            {
+              name: '江西',
+              value: 179
+            },
+            {
+              name: '湖北',
+              value: 39625
+            },
+            {
+              name: '广西',
+              value: 88
+            },
+            {
+              name: '甘肃',
+              value: 8
+            },
+            {
+              name: '山西',
+              value: 29
+            },
+            {
+              name: '内蒙古',
+              value: 36
+            },
+            {
+              name: '陕西',
+              value: 50
+            },
+            {
+              name: '吉林',
+              value: 25
+            },
+            {
+              name: '福建',
+              value: 67
+            },
+            {
+              name: '贵州',
+              value: 32
+            },
+            {
+              name: '广东',
+              value: 444
+            },
+            {
+              name: '青海',
+              value: 0
+            },
+            {
+              name: '西藏',
+              value: 0
+            },
+            {
+              name: '四川',
+              value: 210
+            },
+            {
+              name: '宁夏',
+              value: 4
+            },
+            {
+              name: '海南',
+              value: 32
+            },
+            {
+              name: '台湾',
+              value: 26
+            },
+            {
+              name: '香港',
+              value: 66
+            },
+            {
+              name: '澳门',
+              value: 3
+            }
+          ];
+
+          var yData = [];//省份
+          var barData = [];//状态条
+
+          /* for (var i = 0; i < 10; i++) {
+               barData.push(data[i]);
+               yData.push(i + data[i].name);
+           }*/
+
+          var option = {
+
+            /*title: [{
+                show: true,
+                text: '排名情况',
+                textStyle: {
+                    color: '#521e53',
+                    fontSize: 18
+                },
+                right: 180,
+                top: 100
+            }],*/
+
+            tooltip: {// 鼠标移到图里面的浮动提示框
+              show: true,
+              formatter: function(params) {
+                return params.name + '：' + params.data['value'] +"人"
+              },
+            },
+
