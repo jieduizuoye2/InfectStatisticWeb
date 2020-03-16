@@ -6,16 +6,23 @@
   <title>疫情地图</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
 
-<body>
 <div id="contant">
         <div id="showData">
             <div class="head">
-                <span class="head-point"></span>
-                <span class="head-text">全国疫情</span>
+	<span style="font-size:50px; color:#ff9900"><center>全国疫情</center></span>
                 <div id="time">更新时间</div>
-                <input id="currentTime" type="date"/>
+	</head>
+	<body>	
+	<title>当前时间</title>
+	<body>
+	<!-- 定义一个id为cg -->
+	<span id="cg">‎2020‎年‎3‎月‎16‎日‎ ‎18‎:‎08‎:‎32 </span>
+	<script>
+	<!--这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
+	setInterval("cg.innerHTML=new Date().toLocaleString()",1000);
+	</script>
+	</body>       
             </div>
             <div id="data">
                 <div class="list">
