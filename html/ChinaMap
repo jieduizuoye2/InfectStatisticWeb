@@ -6,9 +6,56 @@
   <title>疫情地图</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
+  <>
 
-<body>
+<!--定义钟表-->
+<div id="contant">
+        <div id="showData">
+            <div class="head">
+	<span style="font-size:50px; color:#ff9900"><center>全国疫情</center></span>
+                <div id="time"><em style="color: rgb(174, 33, 44);">更新时间</em></div>
+	</head>
+	<body>	
+	<title>当前时间</title>
+	<body>
+	<!-- 定义一个id为cg -->
+	<span id="cg"><em style="color: rgb(174, 33, 44);">‎2020‎年‎3‎月‎16‎日‎ ‎18‎:‎08‎:‎32 </em></span>
+	<script>
+	<!--这个cg就是span的id，初始化Date时间并转化为字符string类型,每1000毫秒，setInterval() 就会调用函数，直到被关闭。-->
+	setInterval("cg.innerHTML=new Date().toLocaleString()",1000);
+	</script>
+	</body>       
+            </div>
+
+<div class="main___theme">
+<div class="statistics">
+<div class="title">
+</div>
+<div class="bigNumberPannel">
+	<ul class="count">
+<li>
+    <div class="createItem">
+    <div class="createCount"><b>较昨日<em style="color: rgb(247, 76, 49);">-820</em></b></div>
+</div>
+	<strong style="color: rgb(247, 76, 49);">10002</strong>
+	<span>现存确诊</span>
+</li>
+<li>
+<div class="createItem">
+<div class="createCount">
+<b>较昨日<em style="color: rgb(162, 90, 78);">-194</em></b>
+</div>
+</div>
+	<strong style="color: rgb(162, 90, 78);">3032</strong>
+	<span>现存重症</span>
+</li>
+<li>
+<div class="createItem">
+<div class="createCount">
+<b>较昨日<em style="color: rgb(174, 33, 44);">+51</em></b>
+</div>
+</div>
+
 
     <!--默认图像-->
     <svg id="mysvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1369 1141" 
@@ -1221,14 +1268,15 @@
         <rect x="100" y="1050" width="20" height="20" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)"></rect>
         <text x="130" y="1070" font-size="22" style="fill:rgb(0,0,0);">0</text>;
     </g>
-    
+
     <!--设单击该矩形时修改日期，测试DateChange()函数-->
     <g>
         <rect id="text" x="0" y="0" width="50" height="50" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)"></rect>
     </g>
-    
+
     </svg>
-        
+
+
     <!--互动事件-->
     <script type="text/javascript">
 
@@ -1272,6 +1320,5 @@
         }
     }
 
-    </script>
-    </body>
+</body>
 </html>
